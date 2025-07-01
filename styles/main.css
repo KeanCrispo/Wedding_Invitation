@@ -106,19 +106,32 @@ a {
     bottom: 0px;
     right: 0px;
     width: 300px;
-    z-index: 0; /* Lower than .invite-container */
+    z-index: 0;
     pointer-events: none;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.477));
+    opacity: 0.5;
 }
 
-.rings-decor {
+.ring-decor {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
+    transform-origin: center;
+}
+
+.statue-decor {
     position: absolute;
     bottom: -30px;
-    right: -60px;
+    right: -90px;
     width: 150px;
     z-index: 1;
     pointer-events: none;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.477));
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
     animation: rings-bounce 3s ease-in-out infinite;
     transform-origin: center;
 }
