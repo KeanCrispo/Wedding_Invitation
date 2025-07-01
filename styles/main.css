@@ -127,8 +127,8 @@ a {
 .statue-decor {
     position: absolute;
     bottom: -30px;
-    right: -90px;
-    width: 150px;
+    right: -50px;
+    width: 100px;
     z-index: 1;
     pointer-events: none;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
