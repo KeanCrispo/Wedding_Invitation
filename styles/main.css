@@ -7,7 +7,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Prevents overflow on mobile */
 }
 
 h1, h2 {
@@ -102,18 +101,6 @@ a {
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.477));
 }
 
-.flower-decor2 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    max-width: 60vw;      /* Responsive width */
-    z-index: 0;
-    pointer-events: none;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.477));
-    opacity: 0.5;
-}
-
 .ring-decor {
     position: absolute;
     top: -50px;
@@ -157,8 +144,8 @@ footer {
 
 @media (max-width: 600px) {
     .invite-container {
-        max-width: 95vw;
-        padding: 1rem 0.5rem;
+        max-width: 320px;
+        padding: 1rem 0.75rem;
         border-radius: 16px;
     }
     header h1 {
@@ -172,11 +159,5 @@ footer {
     }
     section, footer {
         font-size: 0.95rem;
-    }
-    .flower-decor2 {
-        width: 150px;
-        max-width: 50vw;
-        bottom: -20px;
-        right: -20px;
     }
 }
