@@ -36,16 +36,20 @@
     </div>
     <script src="scripts/main.js"></script>
     <script>
-        let musicPlayed = false;
-        document.body.addEventListener("click", () => {
-            if (!musicPlayed) {
-                const audio = document.getElementById("bg-music");
-                audio.play().then(() => {
-                    musicPlayed = true;
-                }).catch(error => {
-                    console.error("Autoplay failed:", error);
+        window.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bg-music");
+            audio.play().catch(error => {
+                console.warn("Autoplay was blocked. Music will play on first click.");
+                // Fallback: play on first click if autoplay fails
+                let musicPlayed = false;
+                document.body.addEventListener("click", () => {
+                    if (!musicPlayed) {
+                        audio.play().then(() => {
+                            musicPlayed = true;
+                        });
+                    }
                 });
-            }
+            });
         });
     </script>
 </body>
