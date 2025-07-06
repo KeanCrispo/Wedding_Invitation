@@ -127,7 +127,7 @@ a {
     z-index: 1;
     pointer-events: none;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
-    animation: rings-bounce 3s ease-in-out infinite;
+    animation: rings-bounce 5s ease-in-out infinite;
     transform-origin: center;
 }
 
@@ -136,7 +136,7 @@ a {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
 }
 
