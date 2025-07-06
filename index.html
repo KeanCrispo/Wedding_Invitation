@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="bg-music" src="music.mp3"></audio>
     <div class="invite-container">
         <header>
             <h1>You're Invited to a Golden Celebration</h1>
@@ -34,5 +35,18 @@
         <img src="ring.png" alt="Decorative Ring" class="ring-decor"> 
     </div>
     <script src="scripts/main.js"></script>
+    <script>
+        let musicPlayed = false;
+        document.body.addEventListener("click", () => {
+            if (!musicPlayed) {
+                const audio = document.getElementById("bg-music");
+                audio.play().then(() => {
+                    musicPlayed = true;
+                }).catch(error => {
+                    console.error("Autoplay failed:", error);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
