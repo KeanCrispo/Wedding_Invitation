@@ -58,29 +58,6 @@
       background: rgba(255,255,255,0.7);
       padding: 0 1em;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.5rem 0;
-      font-size: 1em;
-      background: rgba(255,255,255,0.85);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.08);
-    }
-    td, th {
-      border: 1px solid #e6d8b4;
-      padding: 0.7em 0.3em;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-    th {
-      background: linear-gradient(90deg, #fffbe6 60%, #f9e7b3 100%);
-      color: #bfa14a;
-      font-weight: bold;
-      font-size: 1.08em;
-      letter-spacing: 0.5px;
-    }
     .role {
       font-weight: bold;
       color: #d4a610;
@@ -88,24 +65,12 @@
       text-transform: uppercase;
       text-align: center;
       text-shadow: 2px 1px 20px #fcff9b;
+      font-size: 1.1em;
     }
     .note {
       color: #888;
       font-size: 0.95em;
       font-style: italic;
-    }
-    .highlight {
-      color: #d4af37;
-      font-weight: bold;
-      font-size: 1.1em;
-      letter-spacing: 1px;
-    }
-    .name-link {
-      color: #bfa14a;
-      text-decoration: underline;
-      cursor: pointer;
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.08em;
     }
     .gold-divider {
       width: 80px;
@@ -115,93 +80,78 @@
       border-radius: 2px;
       opacity: 0.7;
     }
-    .gold-flower {
-      position: absolute;
-      left: -40px;
-      bottom: -40px;
-      width: 120px;
-      opacity: 0.18;
-      z-index: 0;
-    }
-    .gold-flower-top {
-      position: absolute;
-      right: -40px;
-      top: -40px;
-      width: 120px;
-      opacity: 0.15;
-      z-index: 0;
-      transform: rotate(30deg);
-    }
-    .gold-ring {
-      position: absolute;
-      right: 30px;
-      bottom: 30px;
-      width: 60px;
-      opacity: 0.22;
-      z-index: 0;
-    }
-    .content {
-      position: relative;
-      z-index: 1;
+    .content img {
+      display: block;
+      margin: 0 auto 2rem auto;
+      max-width: 260px;
+      width: 90%;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);
+      border: 3px solid #d4af37;
+      height: auto;
     }
     /* --- MOBILE STYLES --- */
     @media (max-width: 800px) {
       .page {
         padding: 1rem 0.5rem;
-        max-width: 98vw;
+        max-width: 99vw;
         min-height: unset;
         margin: 1rem auto;
+        border-radius: 18px;
       }
       .content img {
         max-width: 98vw;
         width: 100%;
-        height: auto;
         margin-bottom: 1rem;
+        border-radius: 12px;
       }
       h1 {
-        font-size: 1.5em;
+        font-size: 1.3em;
+        margin-bottom: 0.5em;
       }
       h2 {
-        font-size: 1.1em;
+        font-size: 1em;
       }
       .section-title {
         font-size: 1em;
         padding: 0 0.5em;
       }
-      table, td, th {
-        font-size: 0.95em;
-      }
       .role {
-        font-size: 0.95em;
-      }
-      /* Stack flex rows vertically */
-      [style*="display:flex"] {
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        align-items: stretch !important;
+        font-size: 1em;
       }
       .gold-divider {
         margin: 1em auto 1em auto;
         width: 50px;
       }
+      /* Stack all flex rows vertically and remove horizontal gap */
+      .content > div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        align-items: stretch !important;
+        margin-bottom: 1em !important;
+      }
+      .content > div[style*="display:flex"] > div {
+        text-align: center;
+        margin-bottom: 0.5em;
+      }
     }
     @media (max-width: 500px) {
       .page {
-        padding: 0.5rem 0.2rem;
-        border-radius: 10px;
+        padding: 0.5rem 0.1rem;
+        border-radius: 8px;
       }
       h1 {
-        font-size: 1.1em;
-      }
-      h2 {
         font-size: 1em;
       }
+      h2 {
+        font-size: 0.95em;
+      }
       .role {
-        font-size: 0.9em;
+        font-size: 0.95em;
       }
       .content img {
         max-width: 95vw;
-        border-radius: 10px;
+        border-radius: 8px;
       }
     }
   </style>
