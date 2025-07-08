@@ -5,154 +5,186 @@
   <title>Crispo & Hernandez Nuptials</title>
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Playfair Display', serif;
-      background: url('background2.jpg') center/cover no-repeat;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-    }
+  body {
+    font-family: 'Playfair Display', serif;
+    background: url('background2.jpg') center/cover no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .page {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 3rem auto;
+    padding: 3rem 3rem;
+    max-width: 900px;
+    width: 98vw;
+    box-shadow: 0 16px 64px rgba(212, 175, 55, 0.22), 0 4px 16px rgba(0,0,0,0.10);
+    border-radius: 36px;
+    border: 4px solid #d4af37;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  h1, h2, h3 {
+    color: #bfa14a;
+    text-align: center;
+    margin-top: 0;
+    font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+  }
+  h1 {
+    font-size: 3.2em;
+    margin-bottom: 0.3em;
+    color: #d4af37;
+    text-shadow: 5px 5px 24px #faff6a;
+  }
+  h2 {
+    font-size: 2.2em;
+    color: #bfa14a;
+    margin-bottom: 1.5em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-shadow: 0 2px 0 #fffbe6;
+  }
+  .section-title {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5em;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    border-bottom: 3px solid #d4af37;
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    padding: 0 1.5em;
+  }
+  .role {
+    font-weight: bold;
+    color: #d4a610;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 1px 24px #fcff9b;
+    font-size: 1.5em;
+  }
+  .note {
+    color: #888;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+  .gold-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #fffbe6 0%, #d4af37 50%, #fffbe6 100%);
+    margin: 2.5em auto 2.5em auto;
+    border-radius: 3px;
+    opacity: 0.8;
+  }
+  .content img {
+    display: block;
+    margin: 0 auto 2.5rem auto;
+    max-width: 400px;
+    width: 95%;
+    border-radius: 28px;
+    box-shadow: 0 6px 32px rgba(212,175,55,0.22),0 2px 8px rgba(0,0,0,0.10);
+    border: 4px solid #d4af37;
+    height: auto;
+  }
+  /* --- MOBILE STYLES --- */
+  @media (max-width: 900px) {
     .page {
-      background: rgba(255, 255, 255, 0.72);
-      margin: 2.5rem auto;
-      padding: 2rem 2rem;
-      max-width: 700px;
-      width: 90vw;
-      box-shadow: 0 12px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
-      border-radius: 24px;
-      border: 3px solid #d4af37;
-      position: relative;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-    h1, h2, h3 {
-      color: #bfa14a;
-      text-align: center;
-      margin-top: 0;
-      font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
-      letter-spacing: 1px;
-    }
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.2em;
-      color: #d4af37;
-      text-shadow: 5px 5px 20px #faff6a;
-    }
-    h2 {
-      font-size: 1.4em;
-      color: #bfa14a;
-      margin-bottom: 1em;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      text-shadow: 0 1px 0 #fffbe6;
-    }
-    .section-title {
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      font-size: 1.2em;
-      color: #d4af37;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-      border-bottom: 2px solid #d4af37;
-      display: inline-block;
-      background: rgba(255,255,255,0.7);
-      padding: 0 1em;
-    }
-    .role {
-      font-weight: bold;
-      color: #d4a610;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      text-align: center;
-      text-shadow: 2px 1px 20px #fcff9b;
-      font-size: 1.1em;
-    }
-    .note {
-      color: #888;
-      font-size: 0.95em;
-      font-style: italic;
-    }
-    .gold-divider {
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(90deg, #fffbe6 0%, #d4af37 50%, #fffbe6 100%);
-      margin: 2em auto 2em auto;
-      border-radius: 2px;
-      opacity: 0.7;
+      max-width: 99vw;
+      width: 99vw;
+      padding: 1.5rem 0.5rem;
+      border-radius: 20px;
+      margin: 1.5rem auto;
     }
     .content img {
-      display: block;
-      margin: 0 auto 2rem auto;
-      max-width: 260px;
-      width: 90%;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);
-      border: 3px solid #d4af37;
-      height: auto;
+      max-width: 98vw;
+      width: 100%;
+      margin-bottom: 1.2rem;
+      border-radius: 16px;
     }
-    /* --- MOBILE STYLES --- */
-    @media (max-width: 600px) {
-      .page {
-        max-width: 98vw;
-        width: 98vw;
-        padding: 1rem 0.5rem;
-        border-radius: 16px;
-        margin: 1rem auto;
-      }
-      .content img {
-        max-width: 98vw;
-        width: 100%;
-        margin-bottom: 1rem;
-        border-radius: 12px;
-      }
-      h1 {
-        font-size: 1.2rem;
-      }
-      h2 {
-        font-size: 1rem;
-      }
-      .section-title {
-        font-size: 1em;
-        padding: 0 0.5em;
-      }
-      .role {
-        font-size: 1em;
-      }
-      .gold-divider {
-        margin: 1em auto 1em auto;
-        width: 50px;
-      }
-      .content > div[style*="display:flex"] {
-        flex-direction: column !important;
-        gap: 0.5rem !important;
-        align-items: stretch !important;
-        margin-bottom: 1em !important;
-      }
-      .content > div[style*="display:flex"] > div {
-        text-align: center;
-        margin-bottom: 0.5em;
-      }
+    h1 {
+      font-size: 2.1rem;
     }
-    @media (max-width: 400px) {
-      .page {
-        padding: 0.5rem 0.1rem;
-        border-radius: 8px;
-      }
-      h1 {
-        font-size: 1em;
-      }
-      h2 {
-        font-size: 0.95em;
-      }
-      .role {
-        font-size: 0.95em;
-      }
-      .content img {
-        max-width: 95vw;
-        border-radius: 8px;
-      }
+    h2 {
+      font-size: 1.3rem;
     }
+    .section-title {
+      font-size: 1.1em;
+      padding: 0 0.7em;
+    }
+    .role {
+      font-size: 1.1em;
+    }
+    .gold-divider {
+      margin: 1.2em auto 1.2em auto;
+      width: 70px;
+    }
+  }
+  @media (max-width: 600px) {
+    .page {
+      max-width: 99vw;
+      width: 99vw;
+      padding: 0.7rem 0.2rem;
+      border-radius: 12px;
+      margin: 0.7rem auto;
+    }
+    .content img {
+      max-width: 99vw;
+      width: 100%;
+      margin-bottom: 0.7rem;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    .section-title {
+      font-size: 1em;
+      padding: 0 0.5em;
+    }
+    .role {
+      font-size: 1em;
+    }
+    .gold-divider {
+      margin: 0.7em auto 0.7em auto;
+      width: 40px;
+    }
+    .content > div[style*="display:flex"] {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+      align-items: stretch !important;
+      margin-bottom: 1em !important;
+    }
+    .content > div[style*="display:flex"] > div {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+  }
+  @media (max-width: 400px) {
+    .page {
+      padding: 0.3rem 0.05rem;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 0.9em;
+    }
+    h2 {
+      font-size: 0.8em;
+    }
+    .role {
+      font-size: 0.8em;
+    }
+    .content img {
+      max-width: 95vw;
+      border-radius: 6px;
+    }
+  }
   </style>
 </head>
 <body>
