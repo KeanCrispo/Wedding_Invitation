@@ -1,169 +1,239 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Anniversary Invitation</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: 'Playfair Display', serif;
-    background: url('../background.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1, h2 {
-    text-align: center;
-    color: #6a5acd;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.invitation-details {
-    margin: 20px 0;
-}
-
-.invitation-details p {
-    line-height: 1.6;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #777;
-}
-
-.invite-container {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 24px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 5);
-    padding: 2.5rem 2rem;
-    max-width: 400px;
-    text-align: center;
-    border: 3px solid #d4af37;
-    position: relative;
-    z-index: 1; /* Make sure it's above the flower */
-}
-
-.invite-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    background: linear-gradient(135deg, #fff0 60%, #d4af37 100%);
-    z-index: 0;
-    pointer-events: none;
-}
-
-header h1, header h2 {
-    margin: 0.5rem 0;
-    color: #222;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-header h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 50px;
-    color: #d4af37;
-    margin-bottom: 1.5rem;
-}
-
-section, footer {
-    position: relative;
-    z-index: 1;
-}
-
-section h3 {
-    color: #d4af37;
-    margin-top: 1.5rem;
-    font-family: 'Playfair Display', serif;
-}
-
-a {
-    color: #d4af37;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.flower-decor {
-    position: absolute;
-    bottom: -80px;
-    left: -50px;
-    width: 150px;
-    z-index: 1;
-    pointer-events: none;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.477));
-}
-
-.ring-decor {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    z-index: 1;
-    pointer-events: none;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
-    transform-origin: center;
-}
-
-.statue-decor {
-    position: absolute;
-    bottom: -30px;
-    right: -50px;
-    width: 100px;
-    z-index: 1;
-    pointer-events: none;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.777));
-    animation: rings-bounce 5s ease-in-out infinite;
-    transform-origin: center;
-}
-
-@keyframes rings-bounce {
-    0%, 100% {
-        transform: translateY(0);
+  <style>
+    /* Envelope Animation */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Playfair Display', serif;
+      background: url('background.jpg') center/cover no-repeat;
     }
-    50% {
-        transform: translateY(-30px);
+
+    .envelope-container {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1000;
     }
-}
 
+    .lid, .body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease;
+    }
 
-footer {
-    margin-top: rem;
-    color: #222;
-    font-style: italic;
-    font-size: 1.1rem;
-}
+    .lid img, .body img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-@media (max-width: 600px) {
+    .open .lid {
+      transform: translateX(100%);
+    }
+
+    .open .body {
+      transform: translateX(-100%);
+    }
+
+    /* Invite Card */
     .invite-container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+      padding: 2.5rem 2rem;
+      max-width: 400px;
+      text-align: center;
+      border: 3px solid #d4af37;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .envelope-container.open + .invite-container {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    header h1, header h2 {
+      margin: 0.5rem 0;
+      color: #222;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      color: #d4af37;
+      margin-bottom: 1.5rem;
+    }
+
+    section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    section h3 {
+      color: #d4af37;
+      margin-top: 1.5rem;
+    }
+
+    a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .flower-decor, .ring-decor, .statue-decor {
+      position: absolute;
+      pointer-events: none;
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+      z-index: 1;
+    }
+
+    .flower-decor {
+      bottom: -80px;
+      left: -50px;
+      width: 150px;
+    }
+
+    .ring-decor {
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+    }
+
+    .statue-decor {
+      bottom: -30px;
+      right: -50px;
+      width: 100px;
+      animation: rings-bounce 5s ease-in-out infinite;
+    }
+
+    @keyframes rings-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: #222;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .invite-container {
         max-width: 300px;
         padding: 1rem 0.75rem;
         border-radius: 16px;
-    }
-    header h1 {
+      }
+
+      header h1 {
         font-size: 1.5rem;
-    }
-    header h2 {
+      }
+
+      header h2 {
         font-size: 2rem;
-    }
-    section, footer {
+      }
+
+      section, footer {
         font-size: 0.95rem;
+      }
     }
-    section, footer {
-        font-size: 0.95rem;
-    }
-}
+  </style>
+</head>
+<body>
+
+<audio id="bg-music" src="music.mp3"></audio>
+
+<!-- Envelope Animation -->
+<div class="envelope-container" id="envelope" onclick="openEnvelope()">
+  <div class="body">
+    <img src="Envelope_1.png" alt="Envelope Body">
+  </div>
+  <div class="lid">
+    <img src="Envelope_2.png" alt="Envelope Lid">
+  </div>
+</div>
+
+<!-- Invitation Card -->
+<div class="invite-container">
+  <header>
+    <h1>You're Invited to a Golden Celebration</h1>
+    <h2>Josefina Hernandez Crispo & Romeo Padolina Crispo</h2>
+  </header>
+  <section>
+    <p>Join us as we celebrate 50 years of love, laughter, and lasting memories.</p>
+    <p><strong>Date:</strong> Saturday, July 26, 2025</p>
+    <p><strong>Time:</strong> 8:00 AM</p>
+    <p><strong>Location:</strong> Saint Isidore Parish Church,<br>
+    Barangay San Isidro, Catanauan, Quezon</p>
+  </section>
+  <section>
+    <h3>RSVP</h3>
+    <p>Kindly respond by July 20, 2025</p>
+    <a href="mailto:rsvp@example.com">rsvp@example.com</a>
+  </section>
+  <img src="flower.png" alt="Decorative Flower" class="flower-decor">
+  <footer>
+    <p>With grateful hearts, we invite you to share in this golden milestone.</p>
+  </footer>
+  <img src="statue.png" alt="Wedding Statue" class="statue-decor">
+  <img src="ring.png" alt="Decorative Ring" class="ring-decor">
+</div>
+
+<script>
+  function openEnvelope() {
+    const envelope = document.getElementById('envelope');
+    envelope.classList.add('open');
+
+    // Try to play audio on tap
+    const audio = document.getElementById('bg-music');
+    audio.play().catch(error => {
+      console.warn("Autoplay blocked, will play on next interaction.");
+      let musicPlayed = false;
+      document.body.addEventListener("click", () => {
+        if (!musicPlayed) {
+          audio.play().then(() => {
+            musicPlayed = true;
+          });
+        }
+      });
+    });
+
+    // Hide envelope after animation
+    setTimeout(() => {
+      envelope.style.display = 'none';
+    }, 1000);
+  }
+</script>
+
+
+</body>
+</html>
