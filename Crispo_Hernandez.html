@@ -1,267 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Golden Anniversary Invitation</title>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Crispo & Hernandez Nuptials</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    /* Envelope Animation */
-    html, body {
+    body {
+      font-family: 'Playfair Display', serif;
+      background: url('background2.jpg') center/cover no-repeat;
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Playfair Display', serif;
-      background: url('background.jpg') center/cover no-repeat;
+      min-height: 100vh;
     }
-
-    .envelope-container {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      cursor: pointer;
-      overflow: hidden;
-      z-index: 1000;
-    }
-
-    .lid, .body {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transition: transform 1s ease;
-    }
-
-    .lid img, .body img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .open .lid {
-      transform: translateX(100%);
-    }
-
-    .open .body {
-      transform: translateX(-100%);
-    }
-
-    /* Invite Card */
-    .invite-container {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 24px;
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+    .page {
+      background: rgba(255, 255, 255, 0.72);
+      margin: 2.5rem auto;
       padding: 2rem 2rem;
-      max-width: 720px;
+      max-width: 700px;
       width: 90vw;
-      text-align: center;
+      box-shadow: 0 12px 48px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 24px;
       border: 3px solid #d4af37;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 1s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      position: relative;
+      overflow: hidden;
       box-sizing: border-box;
     }
-
-    .envelope-container.open + .invite-container {
-      opacity: 1;
-      z-index: 10;
-    }
-
-    header h1, header h2 {
-      margin: 0.5rem 0;
-      color: #222;
-      font-weight: 700;
+    h1, h2, h3 {
+      color: #bfa14a;
+      text-align: center;
+      margin-top: 0;
+      font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
       letter-spacing: 1px;
     }
-
-    header h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 50px;
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
       color: #d4af37;
-      margin-bottom: 1.5rem;
+      text-shadow: 5px 5px 20px #faff6a;
     }
-
-    section, footer {
-      position: relative;
-      z-index: 1;
+    h2 {
+      font-size: 1.4em;
+      color: #bfa14a;
+      margin-bottom: 1em;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      text-shadow: 0 1px 0 #fffbe6;
     }
-
-    section h3 {
+    .section-title {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.2em;
       color: #d4af37;
-      margin-top: 1.5rem;
-    }
-
-    a {
-      color: #d4af37;
-      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-weight: bold;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      background: rgba(255,255,255,0.7);
+      padding: 0 1em;
     }
-
-    .flower-decor, .ring-decor, .statue-decor {
-      position: absolute;
-      pointer-events: none;
-      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
-      z-index: 1;
+    .role {
+      font-weight: bold;
+      color: #d4a610;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 2px 1px 20px #fcff9b;
+      font-size: 1.1em;
     }
-
-    .flower-decor {
-      bottom: -80px;
-      left: -50px;
-      width: 150px;
-    }
-
-    .ring-decor {
-      top: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-    }
-
-    .statue-decor {
-      bottom: -30px;
-      right: -50px;
-      width: 100px;
-      animation: rings-bounce 5s ease-in-out infinite;
-    }
-
-    @keyframes rings-bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-    }
-
-    footer {
-      margin-top: 2rem;
-      color: #222;
+    .note {
+      color: #888;
+      font-size: 0.95em;
       font-style: italic;
-      font-size: 1.1rem;
     }
-
-    /* Responsive */
+    .gold-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #fffbe6 0%, #d4af37 50%, #fffbe6 100%);
+      margin: 2em auto 2em auto;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+    .content img {
+      display: block;
+      margin: 0 auto 2rem auto;
+      max-width: 260px;
+      width: 90%;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);
+      border: 3px solid #d4af37;
+      height: auto;
+    }
+    /* --- MOBILE STYLES --- */
     @media (max-width: 600px) {
-      .invite-container {
+      .page {
         max-width: 98vw;
         width: 98vw;
         padding: 1rem 0.5rem;
         border-radius: 16px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        min-width: unset;
-        height: auto;
+        margin: 1rem auto;
       }
-
-      header h1 {
+      .content img {
+        max-width: 98vw;
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+      }
+      h1 {
         font-size: 1.2rem;
       }
-
-      header h2 {
-        font-size: 1.5rem;
+      h2 {
+        font-size: 1rem;
       }
-
-      section, footer {
-        font-size: 0.95rem;
+      .section-title {
+        font-size: 1em;
+        padding: 0 0.5em;
       }
-
-      .flower-decor {
-        width: 90px;
-        left: -30px;
-        bottom: -40px;
+      .role {
+        font-size: 1em;
       }
-      .ring-decor {
-        width: 60px;
-        top: -30px;
+      .gold-divider {
+        margin: 1em auto 1em auto;
+        width: 50px;
       }
-      .statue-decor {
-        width: 60px;
-        right: -30px;
-        bottom: -20px;
+      .content > div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        align-items: stretch !important;
+        margin-bottom: 1em !important;
+      }
+      .content > div[style*="display:flex"] > div {
+        text-align: center;
+        margin-bottom: 0.5em;
+      }
+    }
+    @media (max-width: 400px) {
+      .page {
+        padding: 0.5rem 0.1rem;
+        border-radius: 8px;
+      }
+      h1 {
+        font-size: 1em;
+      }
+      h2 {
+        font-size: 0.95em;
+      }
+      .role {
+        font-size: 0.95em;
+      }
+      .content img {
+        max-width: 95vw;
+        border-radius: 8px;
       }
     }
   </style>
 </head>
 <body>
+    <audio id="bg-music" src="KAHIT MAPUTI NA ANG BUHOK KO.mp3"></audio>
+  <div class="page">
+    <div class="content">
+      <img src="Prenup.jpg" alt="Josefina and Romeo" style="display:block;margin:0 auto 2rem auto;max-width:260px;width:90%;border-radius:18px;box-shadow:0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);border:3px solid #d4af37;">
 
-<audio id="bg-music" src="music.mp3"></audio>
+      <h1>Crispo and Hernandez Nuptials</h1>
+      <div class="gold-divider"></div>
 
-<!-- Envelope Animation -->
-<div class="envelope-container" id="envelope" onclick="openEnvelope()">
-  <div class="body">
-    <img src="Envelope_1.png" alt="Envelope Body">
+      <!-- Principal Sponsors -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
+        <div>
+          <div class="role">Principal Sponsor</div>
+          Mrs. Lily Prisida<br>
+          <span class="note">(Tinatandaan pa po ang full name dito)</span>
+        </div>
+        <div>
+          <div class="role" style="visibility:hidden;">Principal Sponsor</div>
+          Mr. Alfred Prisida<br>
+          Vice Mayor Manuel "Nano" Montano
+        </div>
+      </div>
+
+      <!-- Secondary Sponsors -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
+        <div>
+          <div class="role">In Honor of the Groom’s Parents</div>
+          Mr. Jeffrey G. Pedeglorio<br>
+          & Mrs. Dulce C. Pedeglorio
+        </div>
+        <div>
+          <div class="role">In Honor of the Bride’s Parents</div>
+          Mr. Edgardo H. Crispo<br>
+          & Mrs. Malyn C. Moreno
+        </div>
+      </div>
+
+      <!-- Maid of Honor / Best Man -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div>
+          <div class="role">Maid of Honor</div>
+          Angel Shanaia Crispo
+        </div>
+        <div>
+          <div class="role">Best Man</div>
+          Rain Justine Crispo
+        </div>
+      </div>
+
+      <!-- Groomsmen / Bridesmaid -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div>
+          <div class="role">Groomsmen</div>
+          Gean Raven Crispo
+        </div>
+        <div>
+          <div class="role">Bridesmaid</div>
+          Angeline Sanchez
+        </div>
+      </div>
+
+      <!-- Candle, Veil, Cord -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div>
+          <div class="role">To Light Our Path</div>
+          Kean Hedrix Crispo<br>
+          Raniella J. Surio
+        </div>
+        <div>
+          <div class="role">To Cloth Us Together</div>
+          Vian Luster C. Moreno<br>
+          Dimple Shayne N. De Castro
+        </div>
+        <div>
+          <div class="role">To Bind Us One</div>
+          Alica Kristel C. Moreno<br>
+          Mark Emmanuel C. Moreno
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <!-- Other Roles -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1em;margin-top:2em;">
+        <div>
+          <span class="role">Ring Bearer</span><br>
+          Cylo Julius Crispo
+        </div>
+        <div>
+          <span class="role">Bible Bearer</span><br>
+          Ajay T. Hernandez
+        </div>
+        <div>
+          <span class="role">Coin Bearer</span><br>
+        Justine Embhet T. Hernandez
+        </div>
+        <div>
+          <span class="role">Flower Girls</span><br>
+          Ann Maginette R. Serio<br>
+          Zaililey Kynzaeis A. Jalot<br>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="lid">
-    <img src="Envelope_2.png" alt="Envelope Lid">
-  </div>
-</div>
-
-<!-- Invitation Card -->
-<div class="invite-container">
-  <header>
-    <h1>You're Invited to a Golden Celebration</h1>
-    <h2>Josefina Hernandez Crispo & Romeo Padolina Crispo</h2>
-  </header>
-  <section>
-    <p>Join us as we celebrate 50 years of love, laughter, and lasting memories.</p>
-    <p><strong>Date:</strong> Saturday, July 26, 2025</p>
-    <p><strong>Time:</strong> 8:00 AM</p>
-    <p><strong>Location:</strong> Saint Isidore Parish Church,<br>
-    Barangay San Isidro, Catanauan, Quezon</p>
-  </section>
-  <section>
-    <h3>RSVP</h3>
-    <p>Kindly respond by July 20, 2025</p>
-    <button onclick="window.location.href='Crispo_Hernandez.html'" style="margin-top:10px;padding:0.75em 2em;font-size:1.1em;background:#d4af37;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:'Playfair Display',serif;font-weight:bold;">
-      CRISPO-HERNANDEZ
-    </button>
-  </section>
-  <img src="flower.png" alt="Decorative Flower" class="flower-decor">
-  <footer>
-    <p>With grateful hearts, we invite you to share in this golden milestone.</p>
-  </footer>
-  <img src="statue.png" alt="Wedding Statue" class="statue-decor">
-  <img src="ring.png" alt="Decorative Ring" class="ring-decor">
-</div>
-
-<script>
-  function openEnvelope() {
-    const envelope = document.getElementById('envelope');
-    envelope.classList.add('open');
-
-    // Try to play audio on tap
-    const audio = document.getElementById('bg-music');
-    audio.play().catch(error => {
-      console.warn("Autoplay blocked, will play on next interaction.");
-      let musicPlayed = false;
-      document.body.addEventListener("click", () => {
-        if (!musicPlayed) {
-          audio.play().then(() => {
-            musicPlayed = true;
-          });
-        }
+  <script>
+    // Try to play audio on page load
+const audio = document.getElementById('bg-music');
+audio.play().catch(error => {
+  console.warn("Autoplay blocked, will play on scroll interaction.");
+  let musicPlayed = false;
+  const playOnScroll = () => {
+    if (!musicPlayed) {
+      audio.play().then(() => {
+        musicPlayed = true;
+        // Remove the listener after playing
+        window.removeEventListener("scroll", playOnScroll);
+      }).catch(err => {
+        console.warn("Still blocked:", err);
       });
-    });
+    }
+  };
+  window.addEventListener("scroll", playOnScroll);
+});
 
-    // Hide envelope after animation
-    setTimeout(() => {
-      envelope.style.display = 'none';
-    }, 1000);
-  }
-</script>
-
-
+  </script>
 </body>
 </html>
