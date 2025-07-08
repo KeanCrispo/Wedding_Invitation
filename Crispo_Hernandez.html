@@ -66,7 +66,15 @@
     text-transform: uppercase;
     text-align: center;
     text-shadow: 2px 1px 24px #fcff9b;
-    font-size: 2em;
+    font-size: 2.5em; /* Increased size */
+  }
+  .big-name {
+    font-size: 2.2em; /* Add this class for names */
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin: 0.2em 0 0.5em 0;
+    letter-spacing: 1px;
   }
   .note {
     color: #888;
@@ -117,6 +125,9 @@
       padding: 0 0.7em;
     }
     .role {
+      font-size: 2em;
+    }
+    .big-name {
       font-size: 1.5em;
     }
     .note {
@@ -152,6 +163,9 @@
       padding: 0 0.5em;
     }
     .role {
+      font-size: 1.3em;
+    }
+    .big-name {
       font-size: 1.1em;
     }
     .note {
@@ -186,6 +200,9 @@
     .role {
       font-size: 1em;
     }
+    .big-name {
+      font-size: 0.95em;
+    }
     .note {
       font-size: 0.95em;
     }
@@ -209,7 +226,7 @@
       <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
         <div>
           <div class="role">Principal Sponsor</div>
-          Mrs. Lily Prisida<br>
+          <span class="big-name">Mrs. Lily Prisida</span><br>
           <span class="note">(Tinatandaan pa po ang full name dito)</span>
         </div>
         <div>
