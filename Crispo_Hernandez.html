@@ -21,13 +21,14 @@
       cursor: pointer;
       overflow: hidden;
       z-index: 1000;
+      transition: opacity 10s;
     }
 
     .lid, .body {
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: transform 1s ease;
+      transition: transform 2.5s ease;
     }
 
     .lid img, .body img {
@@ -37,11 +38,15 @@
     }
 
     .open .lid {
-      transform: translateX(100%);
+      transform: translateX(150%);
     }
 
     .open .body {
-      transform: translateX(-100%);
+      transform: translateX(-150%);
+    }
+
+    .envelope-container.open {
+      opacity: 0;
     }
 
   .page {
@@ -50,7 +55,7 @@
     padding: 3rem 3rem;
     max-width: 900px;
     width: 98vw;
-    box-shadow: 0 16px 64px rgba(212, 175, 55, 0.22), 0 4px 16px rgba(0,0,0,0.10);
+    box-shadow: 0 16px 64px rgba(212,175,55,0.22), 0 4px 16px rgba(0,0,0,0.10);
     border-radius: 36px;
     border: 4px solid #d4af37;
     position: relative;
@@ -251,11 +256,11 @@
 <body>
   <!-- Envelope Animation -->
 <div class="envelope-container" id="envelope" onclick="openEnvelope()">
-  <div class="body">
-    <img src="1.jpg" alt="Envelope Body">
-  </div>
   <div class="lid">
-    <img src="2.jpg" alt="Envelope Lid">
+    <img src="2.png" alt="Envelope Lid">
+  </div>
+  <div class="body">
+    <img src="1.png" alt="Envelope Body">
   </div>
 </div>
 
@@ -272,7 +277,7 @@
         <div>
           <div class="role">Principal Sponsor</div>
           <span class="big-name">Mr. Alfred Perida & Mrs. Lily Perida</span><br></span>
-          <span class="big-name">Vice Mayor Manuel "Nano" Montano & Mrs. Montano</span>
+          <span class="big-name">Vice Mayor Manuel "Mano" Montano & Mrs. Montano</span>
         </div>
       </div>
 
@@ -352,7 +357,26 @@
         <div>
           <span class="role">Flower Girls</span><br>
           <span class="big-name">Ann Margarete R. Serio</span><br>
-          <span class="big-name">Zailley Khryzseis A. Jalos</span>
+          <span class="big-name">Zailley Khryzseis A. Jalos</span><br>
+          <span class="big-name">Cassie P. Crispo</span>
+        </div>
+      </div>
+
+      <!-- Dress Code Section -->
+      <div style="margin:2em auto 2em auto;text-align:center;">
+        <div class="section-title" style="border:none;margin-bottom:0.5em;">Dress Code</div>
+        <div style="font-size:1.3em;margin-bottom:1em;color:#bfa14a;">
+          Gold Theme Palette
+        </div>
+        <div style="display:flex;justify-content:center;gap:1.2em;align-items:center;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#d4af37;border:2px solid #bfa14a;" title="Gold"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#fffbe6;border:2px solid #d4af37;" title="Ivory"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#bfa14a;border:2px solid #fffbe6;" title="Antique Gold"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#f6e27a;border:2px solid #d4af37;" title="Champagne"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#fff8dc;border:2px solid #bfa14a;" title="Cream"></div>
+        </div>
+        <div style="margin-top:1em;color:#888;font-size:1.1em;">
+          Kindly wear attire in gold, champagne, ivory, or cream shades.
         </div>
       </div>
     </div>
