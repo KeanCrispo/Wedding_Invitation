@@ -12,6 +12,38 @@
     padding: 0;
     min-height: 100vh;
   }
+  .envelope-container {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .lid, .body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s ease;
+    }
+
+    .lid img, .body img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .open .lid {
+      transform: translateX(100%);
+    }
+
+    .open .body {
+      transform: translateX(-100%);
+    }
+
   .page {
     background: rgba(255, 255, 255, 0.681);
     margin: 3rem auto;
@@ -217,6 +249,16 @@
   </style>
 </head>
 <body>
+  <!-- Envelope Animation -->
+<div class="envelope-container" id="envelope" onclick="openEnvelope()">
+  <div class="body">
+    <img src="1.jpg" alt="Envelope Body">
+  </div>
+  <div class="lid">
+    <img src="2.jpg" alt="Envelope Lid">
+  </div>
+</div>
+
     <audio id="bg-music" src="KAHIT MAPUTI NA ANG BUHOK KO.mp3"></audio>
   <div class="page">
     <div class="content">
@@ -317,24 +359,29 @@
   </div>
   
   <script>
-    // Try to play audio on page load
-const audio = document.getElementById('bg-music');
-audio.play().catch(error => {
-  console.warn("Autoplay blocked, will play on scroll interaction.");
-  let musicPlayed = false;
-  const playOnScroll = () => {
-    if (!musicPlayed) {
-      audio.play().then(() => {
-        musicPlayed = true;
-        // Remove the listener after playing
-        window.removeEventListener("scroll", playOnScroll);
-      }).catch(err => {
-        console.warn("Still blocked:", err);
+    function openEnvelope() {
+    const envelope = document.getElementById('envelope');
+    envelope.classList.add('open');
+
+    // Try to play audio on tap
+    const audio = document.getElementById('bg-music');
+    audio.play().catch(error => {
+      console.warn("Autoplay blocked, will play on next interaction.");
+      let musicPlayed = false;
+      document.body.addEventListener("click", () => {
+        if (!musicPlayed) {
+          audio.play().then(() => {
+            musicPlayed = true;
+          });
+        }
       });
-    }
-  };
-  window.addEventListener("scroll", playOnScroll);
-});
+    });
+
+    // Hide envelope after animation
+    setTimeout(() => {
+      envelope.style.display = 'none';
+    }, 1000);
+  }
 
   </script>
 </body>
