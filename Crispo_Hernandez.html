@@ -25,6 +25,7 @@
     overflow: hidden;
     box-sizing: border-box;
   }
+  
   h1, h2, h3 {
     color: #bfa14a;
     text-align: center;
@@ -92,8 +93,8 @@
   .content img {
     display: block;
     margin: 0 auto 2.5rem auto;
-    max-width: 500px;
-    width: 98%;
+    max-width: 700px; /* Increased from 500px */
+    width: 100%;      /* Changed from 98% */
     border-radius: 28px;
     box-shadow: 0 6px 32px rgba(212,175,55,0.22),0 2px 8px rgba(0,0,0,0.10);
     border: 4px solid #d4af37;
@@ -219,7 +220,7 @@
     <audio id="bg-music" src="KAHIT MAPUTI NA ANG BUHOK KO.mp3"></audio>
   <div class="page">
     <div class="content">
-      <img src="Prenup.jpg" alt="Josefina and Romeo" style="display:block;margin:0 auto 2rem auto;max-width:260px;width:90%;border-radius:18px;box-shadow:0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);border:3px solid #d4af37;">
+      <img id="main-photo" src="Prenup.jpg" alt="Josefina and Romeo" style="display:block;margin:0 auto 2rem auto;border-radius:18px;box-shadow:0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);border:3px solid #d4af37;">
 
       <h1>Crispo and Hernandez Nuptials</h1>
       <div class="gold-divider"></div>
@@ -237,8 +238,8 @@
       <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
         <div>
           <div class="role">In Honor of the Groom’s Parents</div>
-          <span class="big-name">Mr. Jeffrey G. Pedeglorio & </span><br>
-          <span class="big-name">Mrs. Dulce C. Pedeglorio</span>
+          <span class="big-name">Mr. Jeffrey G. Pedegloria & </span><br>
+          <span class="big-name">Mrs. Dulce C. Pedegloria</span>
         </div>
         <div>
           <div class="role">In Honor of the Bride’s Parents</div>
@@ -314,6 +315,7 @@
       </div>
     </div>
   </div>
+  
   <script>
     // Try to play audio on page load
 const audio = document.getElementById('bg-music');
