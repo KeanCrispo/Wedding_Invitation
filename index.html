@@ -58,7 +58,7 @@
       padding: 2rem 2rem;
       max-width: 720px;      /* Wider */
       min-width: 330px;
-      height: 620px;         /* Shorter */
+      height: 650px;         /* Shorter */
       text-align: center;
       border: 3px solid #d4af37;
       position: absolute;
@@ -122,10 +122,11 @@
     }
 
     .ring-decor {
-      top: -50px;
+      top: -20px;
       left: 50%;
       transform: translateX(-50%);
       width: 100px;
+      
     }
 
     .statue-decor {
@@ -149,6 +150,41 @@
       color: #222;
       font-style: italic;
       font-size: 1.1rem;
+    }
+
+    /* Button Styles */
+    .invite-btn {
+      margin-top: 10px;
+      padding: 0.85em 2.5em;
+      font-size: 1.15em;
+      background: linear-gradient(90deg, #ffe082 0%, #d4af37 60%, #bfa14a 100%);
+      color: #fffbe6;
+      border: 2px solid #bfa14a;
+      border-bottom: 4px solid #a88a2c;
+      border-radius: 12px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      box-shadow:
+        0 6px 0 #a88a2c,           /* Strong bottom shadow for 3D effect */
+        0 2px 18px rgba(212,175,55,0.18),
+        0 1px 4px rgba(0,0,0,0.10);
+      transition: 
+        background 0.2s, 
+        transform 0.15s, 
+        box-shadow 0.2s;
+      letter-spacing: 1px;
+    }
+
+    .invite-btn:hover, .invite-btn:focus {
+      background: linear-gradient(90deg, #fffbe6 0%, #bfa14a 60%, #d4af37 100%);
+      color: #fff;
+      transform: translateY(2px) scale(0.98);
+      box-shadow:
+        0 2px 0 #a88a2c,
+        0 1px 8px rgba(212,175,55,0.18),
+        0 1px 4px rgba(0,0,0,0.10);
+      outline: none;
     }
 
     /* Responsive */
@@ -200,15 +236,19 @@
   </header>
   <section>
     <p>Join us as we celebrate 50 years of love, laughter, and lasting memories.</p>
+    <p><strong>Location:</strong> Saint Isidore Parish Church,<br>
+    </p>
+
+    <p><strong>Reception Venue:</strong> San Isidro Covered Court. Barangay San Isidro, Catanauan, Quezon</p>
+
     <p><strong>Date:</strong> Saturday, July 26, 2025</p>
     <p><strong>Time:</strong> 9:00 AM</p>
-    <p><strong>Location:</strong> Saint Isidore Parish Church,<br>
-    Barangay San Isidro, Catanauan, Quezon</p>
+
   </section>
-  <section>
-    <h3>RSVP</h3>
-    <p>Kindly respond by July 20, 2025</p>
-    <button onclick="window.location.href='Crispo_Hernandez.html'" style="margin-top:10px;padding:0.75em 2em;font-size:1.1em;background:#d4af37;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:'Playfair Display',serif;font-weight:bold;">
+    <p style="color:#bfa14a;font-size:1em;margin-bottom:0.5em;">
+      Tap the button below for full invitation details
+    </p>
+    <button class="invite-btn" onclick="window.location.href='Crispo_Hernandez.html'">
       CRISPO-HERNANDEZ
     </button>
   </section>
@@ -217,7 +257,7 @@
     <p>With grateful hearts, we invite you to share in this golden milestone.</p>
   </footer>
   <img src="statue.png" alt="Wedding Statue" class="statue-decor">
-  <img src="ring.png" alt="Decorative Ring" class="ring-decor">
+  <img src="rings.png" alt="Decorative Ring" class="ring-decor">
 </div>
 
 <script>
