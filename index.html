@@ -58,7 +58,8 @@
       padding: 2rem 2rem;
       max-width: 720px;      /* Wider */
       min-width: 330px;
-      height: 650px;         /* Shorter */
+      height: auto;         /* Shorter */
+      min-height: 400px;    /* Optional: for some vertical space */
       text-align: center;
       border: 3px solid #d4af37;
       position: absolute;
@@ -190,22 +191,33 @@
     /* Responsive */
     @media (max-width: 500px) {
       .invite-container {
-        max-width: 200px;
-        padding: 1rem 0.75rem;
+        max-width: 98vw;
+        min-width: unset;
+        padding: 1rem 0.5rem 2.5rem 0.5rem;
         border-radius: 16px;
+        height: auto;
+      }
+
+      .invite-btn {
+        width: 100%;
+        font-size: 1.1em;
+        padding: 1em 0;
+        margin-top: 1em;
       }
 
       header h1 {
+        font-size: 1.2rem;
+      }
+      header h2 {
         font-size: 1.5rem;
       }
-
-      header h2 {
-        font-size: 2rem;
-      }
-
       section, footer {
-        font-size: 0.95rem;
+        font-size: 1rem;
       }
+    }
+
+    .invite-container {
+      padding-bottom: 2.5rem;
     }
   </style>
 </head>
