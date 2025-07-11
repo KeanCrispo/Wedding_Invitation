@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Golden Anniversary Invitation</title>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Crispo & Hernandez Nuptials</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    /* Envelope Animation */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Playfair Display', serif;
-      background: url('background.jpg') center/cover no-repeat;
-    }
-
-    .envelope-container {
+  body {
+    font-family: 'Playfair Display', serif;
+    background: url('background2.jpg') center/cover no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  .envelope-container {
       position: fixed;
       width: 100vw;
       height: 100vh;
@@ -27,13 +21,14 @@
       cursor: pointer;
       overflow: hidden;
       z-index: 1000;
+      transition: opacity 10s;
     }
 
     .lid, .body {
       position: absolute;
       width: 100%;
       height: 100%;
-      transition: transform 1s ease;
+      transition: transform 2.5s ease;
     }
 
     .lid img, .body img {
@@ -43,226 +38,362 @@
     }
 
     .open .lid {
-      transform: translateX(100%);
+      transform: translateX(150%);
     }
 
     .open .body {
-      transform: translateX(-100%);
+      transform: translateX(-150%);
     }
 
-    /* Invite Card */
-    .invite-container {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 24px;
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
-      padding: 2rem 2rem;
-      max-width: 720px;      /* Wider */
-      min-width: 330px;
-      height: 650px;         /* Shorter */
-      text-align: center;
-      border: 3px solid #d4af37;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+    .envelope-container.open {
       opacity: 0;
-      transition: opacity 1s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
-    .envelope-container.open + .invite-container {
-      opacity: 1;
-      z-index: 10;
+  .page {
+    background: rgba(255, 255, 255, 0.681);
+    margin: 3rem auto;
+    padding: 3rem 3rem;
+    max-width: 900px;
+    width: 98vw;
+    box-shadow: 0 16px 64px rgba(212,175,55,0.22), 0 4px 16px rgba(0,0,0,0.10);
+    border-radius: 36px;
+    border: 4px solid #d4af37;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  h1, h2, h3 {
+    color: #bfa14a;
+    text-align: center;
+    margin-top: 0;
+    font-family: 'Great Vibes', cursive, 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+  }
+  h1 {
+    font-size: 4em;
+    margin-bottom: 0.3em;
+    color: #d4af37;
+    text-shadow: 5px 5px 24px #faff6a;
+  }
+  h2 {
+    font-size: 2.8em;
+    color: #bfa14a;
+    margin-bottom: 1.5em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-shadow: 0 2px 0 #fffbe6;
+  }
+  .section-title {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 2em;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    border-bottom: 3px solid #d4af37;
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    padding: 0 1.5em;
+  }
+  .role {
+    font-weight: bold;
+    color: #d4a610;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 1px 24px #fcff9b;
+    font-size: 2.5em; /* Increased size */
+  }
+  .big-name {
+    font-size: 2.2em; /* Add this class for names */
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin: 0.2em 0 0.5em 0;
+    letter-spacing: 1px;
+  }
+  .note {
+    color: #888;
+    font-size: 1.4em;
+    font-style: italic;
+  }
+  .gold-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #fffbe6 0%, #d4af37 50%, #fffbe6 100%);
+    margin: 2.5em auto 2.5em auto;
+    border-radius: 3px;
+    opacity: 0.8;
+  }
+  .content img {
+    display: block;
+    margin: 0 auto 2.5rem auto;
+    max-width: 700px; /* Increased from 500px */
+    width: 100%;      /* Changed from 98% */
+    border-radius: 28px;
+    box-shadow: 0 6px 32px rgba(212,175,55,0.22),0 2px 8px rgba(0,0,0,0.10);
+    border: 4px solid #d4af37;
+    height: auto;
+  }
+  /* --- MOBILE STYLES --- */
+  @media (max-width: 900px) {
+    .page {
+      max-width: 99vw;
+      width: 99vw;
+      padding: 1.5rem 0.5rem;
+      border-radius: 20px;
+      margin: 1.5rem auto;
     }
-
-    header h1, header h2 {
-      margin: 0.5rem 0;
-      color: #222;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .content img {
+      max-width: 98vw;
+      width: 100%;
+      margin-bottom: 1.2rem;
+      border-radius: 16px;
     }
-
-    header h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 50px;
-      color: #d4af37;
-      margin-bottom: 1.5rem;
+    h1 {
+      font-size: 3rem;
     }
-
-    section, footer {
-      position: relative;
-      z-index: 1;
+    h2 {
+      font-size: 1.8rem;
     }
-
-    section h3 {
-      color: #d4af37;
-      margin-top: 1.5rem;
+    .section-title {
+      font-size: 1.5em;
+      padding: 0 0.7em;
     }
-
-    a {
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: bold;
+    .role {
+      font-size: 2em;
     }
-
-    .flower-decor, .ring-decor, .statue-decor {
-      position: absolute;
-      pointer-events: none;
-      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
-      z-index: 1;
+    .big-name {
+      font-size: 1.5em;
     }
-
-    .flower-decor {
-      bottom: -80px;
-      left: -50px;
-      width: 150px;
+    .note {
+      font-size: 1.1em;
     }
-
-    .ring-decor {
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      
+    .gold-divider {
+      margin: 1.2em auto 1.2em auto;
+      width: 70px;
     }
-
-    .statue-decor {
-      bottom: -30px;
-      right: -50px;
-      width: 100px;
-      animation: rings-bounce 5s ease-in-out infinite;
-    }
-
-    @keyframes rings-bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-    }
-
-    footer {
-      margin-top: 2rem;
-      color: #222;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-
-    /* Button Styles */
-    .invite-btn {
-      margin-top: 10px;
-      padding: 0.85em 2.5em;
-      font-size: 1.15em;
-      background: linear-gradient(90deg, #ffe082 0%, #d4af37 60%, #bfa14a 100%);
-      color: #fffbe6;
-      border: 2px solid #bfa14a;
-      border-bottom: 4px solid #a88a2c;
+  }
+  @media (max-width: 600px) {
+    .page {
+      max-width: 99vw;
+      width: 99vw;
+      padding: 0.7rem 0.2rem;
       border-radius: 12px;
-      cursor: pointer;
-      font-family: 'Playfair Display', serif;
-      font-weight: bold;
-      box-shadow:
-        0 6px 0 #a88a2c,           /* Strong bottom shadow for 3D effect */
-        0 2px 18px rgba(212,175,55,0.18),
-        0 1px 4px rgba(0,0,0,0.10);
-      transition: 
-        background 0.2s, 
-        transform 0.15s, 
-        box-shadow 0.2s;
-      letter-spacing: 1px;
+      margin: 0.7rem auto;
     }
-
-    .invite-btn:hover, .invite-btn:focus {
-      background: linear-gradient(90deg, #fffbe6 0%, #bfa14a 60%, #d4af37 100%);
-      color: #fff;
-      transform: translateY(2px) scale(0.98);
-      box-shadow:
-        0 2px 0 #a88a2c,
-        0 1px 8px rgba(212,175,55,0.18),
-        0 1px 4px rgba(0,0,0,0.10);
-      outline: none;
+    .content img {
+      max-width: 99vw;
+      width: 100%;
+      margin-bottom: 0.7rem;
+      border-radius: 10px;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .invite-container {
-        max-width: 300px;
-        padding: 1rem 0.75rem;
-        border-radius: 16px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      header h2 {
-        font-size: 2rem;
-      }
-
-      section, footer {
-        font-size: 0.95rem;
-      }
+    h1 {
+      font-size: 2rem;
     }
+    h2 {
+      font-size: 1.2rem;
+    }
+    .section-title {
+      font-size: 1.1em;
+      padding: 0 0.5em;
+    }
+    .role {
+      font-size: 1.3em;
+    }
+    .big-name {
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .note {
+      font-size: 1em;
+    }
+    .gold-divider {
+      margin: 0.7em auto 0.7em auto;
+      width: 100px;
+    }
+    .content > div[style*="display:flex"] {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+      align-items: stretch !important;
+      margin-bottom: 1em !important;
+    }
+    .content > div[style*="display:flex"] > div {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+  }
+  @media (max-width: 400px) {
+    .page {
+      padding: 0.3rem 0.05rem;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 1.2em;
+    }
+    h2 {
+      font-size: 1em;
+    }
+    .role {
+      font-size: 1em;
+    }
+    .big-name {
+      font-size: 0.95em;
+      text-align: center;
+    }
+    .note {
+      font-size: 0.95em;
+    }
+    .content img {
+      max-width: 95vw;
+      border-radius: 6px;
+    }
+  }
   </style>
 </head>
 <body>
-
-<audio id="bg-music" src="music.mp3"></audio>
-
-<!-- Envelope Animation -->
+  <!-- Envelope Animation -->
 <div class="envelope-container" id="envelope" onclick="openEnvelope()">
+  <div class="lid">
+    <img src="2.png" alt="Envelope Lid">
+  </div>
+  <div class="body">
+    <img src="1.png" alt="Envelope Body">
+  </div>
   <div style="position:absolute;bottom:8%;left:0;width:100%;text-align:center;z-index:10;">
-    <span style="font-size:1em;color:#bfa14a;background:rgba(255,255,255,0.85);padding:0.6em 1.2em;border-radius:18px;box-shadow:0 2px 12px #d4af3750;">
+    <span style="font-size:2.5em;color:#bfa14a;background:rgba(255,255,255,0.85);padding:0.6em 1.2em;border-radius:18px;box-shadow:0 2px 12px #d4af3750;">
       Tap anywhere to open the envelope
     </span>
   </div>
-  <div class="body">
-    <img src="Envelope_1.png" alt="Envelope Body">
-  </div>
-  <div class="lid">
-    <img src="Envelope_2.png" alt="Envelope Lid">
-  </div>
 </div>
 
-<!-- Invitation Card -->
-<div class="invite-container">
-  <header>
-    <h1>You're Invited to a Golden Celebration</h1>
-    
-    <h2>Josefina Hernandez Crispo & Romeo Padolina Crispo</h2>
-  </header>
-  <section>
-    <p>Join us as we celebrate 50 years of love, laughter, and lasting memories.</p>
-    <p><strong>Location:</strong> Saint Isidore Parish Church,<br>
-    </p>
+    <audio id="bg-music" src="KAHIT MAPUTI NA ANG BUHOK KO.mp3"></audio>
+  <div class="page">
+    <div class="content">
+      <img id="main-photo" src="Prenup.jpg" alt="Josefina and Romeo" style="display:block;margin:0 auto 2rem auto;border-radius:18px;box-shadow:0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);border:3px solid #d4af37;">
 
-    <p><strong>Reception Venue:</strong> San Isidro Covered Court. Barangay San Isidro, Catanauan, Quezon</p>
+      <h1>Crispo and Hernandez Nuptials</h1>
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
 
-    <p><strong>Date:</strong> Saturday, July 26, 2025</p>
-    <p><strong>Time:</strong> 9:00 AM</p>
+      <!-- Principal Sponsors -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
+        <div style="text-align:center;">
+          <div class="role">Principal Sponsor</div>
+          <span class="big-name">Mr. Alfred Perida & Mrs. Lily Perida</span><br>
+          <span class="big-name">Vice Mayor Manuel "Mano" Montano & Mrs. Rosemini H. Montano</span>
+        </div>
+      </div>
 
-  </section>
-    <p style="color:#bfa14a;font-size:1em;margin-bottom:0.5em;">
-      Tap the button below for full invitation details
-    </p>
-    <button class="invite-btn" onclick="window.location.href='Crispo_Hernandez.html'">
-      CRISPO-HERNANDEZ
-    </button>
-  </section>
-  <img src="flower.png" alt="Decorative Flower" class="flower-decor">
-  <footer>
-    <p>With grateful hearts, we invite you to share in this golden milestone.</p>
-  </footer>
-  <img src="statue.png" alt="Wedding Statue" class="statue-decor">
-  <img src="rings.png" alt="Decorative Ring" class="ring-decor">
-</div>
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
+      <!-- Secondary Sponsors -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5em;">
+        <div style="text-align:center;">
+          <div class="role">In Honor of the Groom’s Parents</div>
+          <span class="big-name">Mr. Jeffry O. Pedegloria & </span><br>
+          <span class="big-name">Mrs. Dulce C. Pedegloria</span>
+        </div>
+        <div style="text-align:center;">
+          <div class="role">In Honor of the Bride’s Parents</div>
+          <span class="big-name">Mr. Edgardo H. Crispo & </span><br>
+          <span class="big-name">Mrs. Malyn C. Moreno</span>
+        </div>
+      </div>
 
-<script>
-  function openEnvelope() {
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
+
+      <!-- Maid of Honor / Best Man -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div style="text-align:center;">
+          <div class="role">Maid of Honor</div>
+          <span class="big-name">Angel Shanaia Crispo</span>
+        </div>
+        <div style="text-align:center;">
+          <div class="role">Best Man</div>
+          <span class="big-name">Rain Justine Crispo</span>
+        </div>
+      </div>
+
+      <!-- Groomsmen / Bridesmaid -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div style="text-align:center;">
+          <div class="role">Groomsmen</div>
+          <span class="big-name">Gean Raven Crispo</span>
+        </div>
+        <div style="text-align:center;">
+          <div class="role">Bridesmaid</div>
+          <span class="big-name">Angeline Sanchez</span>
+        </div>
+      </div>
+
+      <!-- Candle, Veil, Cord -->
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1em;">
+        <div style="text-align:center;">
+          <div class="role">To Light Our Path</div>
+          <a class="big-name" href="https://www.facebook.com/kean.heldrix.crispo.2025" target="_blank">Kean Hedrix Crispo</a><br>
+          <span class="big-name">Raniella J. Surio</span>
+        </div>
+        <div style="text-align:center;">
+          <div class="role">To Cloth Us Together</div>
+          <span class="big-name">Yvan Luster C. Moreno</span><br>
+          <span class="big-name">Dimple Shayne N. De Castro</span>
+        </div>
+        <div style="text-align:center;" >
+          <div class="role">To Bind Us One</div>
+          <span class="big-name">Alea Kristel C. Moreno</span><br>
+          <span class="big-name">Mark Emmanuel C. Moreno</span>
+        </div>
+      </div>
+
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
+
+      <!-- Other Roles -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1em;margin-top:2em;">
+        <div style="text-align:center;">
+          <span class="role">Ring Bearer</span><br>
+          <span class="big-name">Cyb Jairuss Crispo</span>
+        </div>
+        <div style="text-align:center;">
+          <span class="role">Bible Bearer</span><br>
+          <span class="big-name">A-jay T. Hernandez</span>
+        </div>
+        <div style="text-align:center;">
+          <span class="role">Coin Bearer</span><br>
+          <span class="big-name">Justine Emhel T. Hernandez</span>
+        </div>
+        <div style="text-align:center;">
+          <span class="role">Flower Girls</span><br>
+          <span class="big-name">Ann Margarete R. Serio</span><br>
+          <span class="big-name">Chryztal Khaeil A. Jalos</span><br>
+          <span class="big-name">Cassie P. Crispo</span>
+        </div>
+      </div>
+
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
+
+      <!-- Dress Code Section -->
+      <div style="margin:2em auto 2em auto;text-align:center;">
+        <div class="section-title" style="border:none;margin-bottom:0.5em;">Dress Code</div>
+        <div style="font-size:1.3em;margin-bottom:1em;color:#bfa14a;">
+          Gold Theme Palette
+        </div>
+        <div style="display:flex;justify-content:center;gap:1.2em;align-items:center;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#d4af37;border:2px solid #bfa14a;" title="Gold"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#fffbe6;border:2px solid #d4af37;" title="Ivory"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#bfa14a;border:2px solid #fffbe6;" title="Antique Gold"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#f6e27a;border:2px solid #d4af37;" title="Champagne"></div>
+          <div style="width:38px;height:38px;border-radius:50%;background:#fff8dc;border:2px solid #bfa14a;" title="Cream"></div>
+        </div>
+        <div style="margin-top:1em;color:#888;font-size:1.1em;">
+          Kindly wear attire in gold, champagne, ivory, or cream shades.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function openEnvelope() {
     const envelope = document.getElementById('envelope');
     envelope.classList.add('open');
 
@@ -285,8 +416,7 @@
       envelope.style.display = 'none';
     }, 1000);
   }
-</script>
 
-
+  </script>
 </body>
 </html>
