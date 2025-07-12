@@ -371,6 +371,23 @@
       </div>
 
       <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
+          <!-- Slideshow Start -->
+          <div id="slideshow" style="margin-top:1em;">
+            <div style="text-align:center;">
+          <span class="role">Slideshow</span><br>
+          <!-- Add this image element for the slideshow -->
+          <img id="fg-slide-img" src="IMG_8438.jpg" alt="Flower Girl Slideshow"
+  style="display:block;margin:0 auto 2rem auto;border-radius:18px;box-shadow:0 4px 24px rgba(212,175,55,0.18),0 1px 4px rgba(0,0,0,0.08);border:3px solid #d4af37;max-width:500px;width:100%;height:auto;">
+          <div style="margin-top:0.5em;">
+              <button onclick="prevFGSlide()" style="font-size:1.2em;padding:0.3em 1em;border-radius:8px;border:none;background:#d4af37;color:#fff;cursor:pointer;margin-right:0.5em;">&#8592; Prev</button>
+              <button onclick="nextFGSlide()" style="font-size:1.2em;padding:0.3em 1em;border-radius:8px;border:none;background:#d4af37;color:#fff;cursor:pointer;">Next &#8594;</button>
+            </div>
+          </div>
+          <!-- Slideshow End -->
+        </div>
+      </div>
+
+      <img src="gold-elegant-divider.png" alt="" style="display:block;margin:2.5em auto 2.5em auto;max-width:420px;width:90%;border:none;box-shadow:none;">
 
       <!-- Dress Code Section -->
       <div style="margin:2em auto 2em auto;text-align:center;">
@@ -416,6 +433,31 @@
       envelope.style.display = 'none';
     }, 1000);
   }
+
+  // Slideshow 
+  const fgSlides = [
+    "IMG_8438.jpg", // Replace with your actual image filenames
+    "IMG_8436.jpg",
+    "IMG_8434.jpg",
+    "IMG_8435.jpg"
+  ];
+  let fgSlideIndex = 0;
+  function showFGSlide(idx) {
+    const img = document.getElementById('fg-slide-img');
+    img.src = fgSlides[idx];
+  }
+  function prevFGSlide() {
+    fgSlideIndex = (fgSlideIndex - 1 + fgSlides.length) % fgSlides.length;
+    showFGSlide(fgSlideIndex);
+  }
+  function nextFGSlide() {
+    fgSlideIndex = (fgSlideIndex + 1) % fgSlides.length;
+    showFGSlide(fgSlideIndex);
+  }
+  // Optional: Auto-advance every 5 seconds
+  setInterval(() => {
+    nextFGSlide();
+  }, 5000);
 
   </script>
 </body>
